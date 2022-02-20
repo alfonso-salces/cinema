@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State, actorsFeatureKey } from '../reducers/companies.reducer';
+import { State, companiesFeatureKey } from '../reducers/companies.reducer';
 
-export const selectActorsState = createFeatureSelector<State>(actorsFeatureKey);
+export const selectCompaniesState = createFeatureSelector<State>(companiesFeatureKey);
 
-export const selectActors = createSelector(selectActorsState, (state: State) => state.actors);
+export const selectCompanies = createSelector(selectCompaniesState, (state: State) => state.companies);

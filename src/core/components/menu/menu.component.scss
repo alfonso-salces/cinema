@@ -1,19 +1,22 @@
-@import '_main-theme';
-
+@import "_main-theme";
 
 .navbar {
-    display: grid;
-    grid-template-columns: 4em 96%;
-    align-items: center;
-    padding: 0.5em 0;
-    width: 100%;
-    z-index: 2;
-    position: fixed;
-    background-color: $secondaryBackgroundColor;
-    font-family: $textFontFamily;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.04);
-    &--icon {
-        margin: 0 1em;
-        width: 2.5em;
-    }
+  display: grid;
+  grid-template-columns: 3em 96%;
+  align-items: center;
+  padding: 0.5em 0;
+  width: 100%;
+  z-index: 2;
+  position: fixed;
+  background-color: $secondaryBackgroundColor;
+  font-family: $textFontFamily;
+  padding: 1em;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.04);
+  &--icon {
+    width: 1.5em;
+  }
+}
+
+.sidebar-open {
+  opacity: 0.6;
 }

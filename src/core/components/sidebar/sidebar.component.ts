@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { setSidebarIsOpen } from '../../store/actions/sidebar.actions';
 
 @Component({
   selector: 'dle-sidebar',
@@ -9,5 +11,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class SidebarComponent {
 
   readonly menuItems = ['Películas', 'Actores', 'Estudios'];
+
+  constructor(private readonly store$: Store) {}
+  closeSidebar() {
+    this.store$.dispatch(setSidebarIsOpen({isOpen: false}));
+  }
 
 }

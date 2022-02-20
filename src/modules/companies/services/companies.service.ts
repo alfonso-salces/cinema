@@ -18,4 +18,8 @@ constructor(private readonly http: HttpClient) {}
     getCompanies(): Observable<Company[]> {
         return this.http.get<Company[]>('http://localhost:3000/companies');
     }
+
+    getCompanyFromMovie(movieId: number): Observable<Company> {
+        return this.http.get<Company>(`http://localhost:3000/companies/${movieId}`);
+    }
 }

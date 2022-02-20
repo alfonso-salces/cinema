@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import '_variables';
+
+* {
+    margin: 0;
+}
+
+h1 {
+    font-family: $textFontFamily;
+    letter-spacing: 0.10em;
+    font-size: $titleFontSize;
+}

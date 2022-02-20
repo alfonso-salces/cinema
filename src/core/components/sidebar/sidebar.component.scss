@@ -1,0 +1,48 @@
+@import '_main-theme';
+
+
+.sidebar {
+    z-index: 3;
+    height: 100vh;
+    box-sizing: border-box;
+    position: fixed;
+    background: $mainBackgroundColor;
+    font-family: $textFontFamily;
+    font-size: $subtitleFontSize;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.04);
+    &--title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+        background-color: $secondaryBackgroundColor;
+        padding: 1em;
+        color: $primaryTextColor;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            cursor: pointer;
+            padding: 1em;
+            border-bottom: 1px solid $secondaryBackgroundColor;
+        }
+        li:hover {
+            border-bottom: 2px solid $secondaryBackgroundColor;
+            letter-spacing: 0.03em;
+        }
+    }
+}
+
+@include breakpoint(sm) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@include breakpoint(md) {
+    .sidebar {
+        width: 300px;
+        border-right: 1px solid $primaryBackgroundColor;
+    }
+}

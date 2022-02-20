@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "dle",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -31,9 +31,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme/_variables.scss",
+              "src/theme/_mixins.scss",
+              "src/theme/_main-theme.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/theme/"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -107,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "movies"
+  "defaultProject": "Cinema"
 }

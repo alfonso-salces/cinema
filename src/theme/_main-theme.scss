@@ -1,0 +1,33 @@
+@import "_variables";
+@import "_mixins";
+
+.close-button {
+  border: none;
+  background: none;
+  max-height: 30px;
+  font-weight: 800;
+  font-size: $subtitleFontSize;
+  cursor: pointer;
+  &__secondary {
+    @extend .close-button;
+    color: $primaryBackgroundColor;
+  }
+  &__primary {
+    @extend .close-button;
+    color: $primaryTextColor;
+  }
+}
+
+.close-button:disabled {
+  cursor: not-allowed;
+}
+
+.main-wrapper {
+  z-index: 1;
+  box-sizing: border-box;
+  height: 100vh;
+  &__sidebar-open {
+      opacity: 0.6;
+      background: rgba(0,0,0,1);
+  }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$primaryTextColor: #2F5CC6;
+$secondaryTextColor: #040811;
+$primaryBackgroundColor: #EEF2FB;
+$secondaryBackgroundColor: #BDCCEF;
+$mainBackgroundColor: #FFFFFF;
+$textFontSize: 14px;
+$subtitleFontSize: 16px;
+$titleFontSize: 18px;
+$textFontSize: 18px;
+$textSeparation: 1px;
+$titleSeparation: 1px;
+$textFontFamily: 'Roboto', sans-serif;
+
+$breakpoints: (
+  'sm':  ( max-width:  768px ),
+  'md': ( min-width:  769px ),
+  'lg':  ( min-width: 1200px )
+) !default;

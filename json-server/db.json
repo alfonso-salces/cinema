@@ -1,0 +1,30 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Universal Pictures",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Universal_Pictures_logo.svg/1200px-Universal_Pictures_logo.svg.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+    },
+    {
+      "id": 2,
+      "name": "Paramouth Pictures",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Paramount_Plus.svg/1200px-Paramount_Plus.svg.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+    },
+    {
+      "id": 3,
+      "name": "Columbia Pictures",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Columbia_Pictures_logo.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+    },
+    {
+      "id": 4,
+      "name": "Warner Bros",
+      "image": "https://static.wikia.nocookie.net/samuraijack/images/d/d4/Warner_Bros._Entertainment.png/revision/latest?cb=20200913223749&path-prefix=es",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+    }
+  ],
+  "movies": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "actors": [{ "name": "typicode" }]
+}

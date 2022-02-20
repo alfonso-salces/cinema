@@ -1,6 +1,10 @@
-<dle-sidebar></dle-sidebar>
-<dle-menu [sidebarOpen]="true"></dle-menu>
+<dle-sidebar *ngIf="isOpenSidebar$ | async"></dle-sidebar>
+<dle-menu [sidebarOpen]="isOpenSidebar$ | async"></dle-menu>
 
-<div [ngClass]="{'main-wrapper__sidebar-open': true}" class="main-wrapper">
-    <router-outlet></router-outlet>
+<div
+  [ngClass]="{ 'main-wrapper__sidebar-open': (isOpenSidebar$ | async), 'main-wrapper__sidebar-close': !(isOpenSidebar$ | async)}"
+  class="main-wrapper"
+  (click)="openSidebar()"
+>
+  <router-outlet></router-outlet>
 </div>

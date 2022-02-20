@@ -14,7 +14,7 @@
   }
   &__primary {
     @extend .close-button;
-    color: $primaryTextColor;
+    color: $primaryBackgroundColor;
   }
 }
 
@@ -25,9 +25,13 @@
 .main-wrapper {
   z-index: 1;
   box-sizing: border-box;
-  height: 100vh;
   &__sidebar-open {
-      opacity: 0.6;
-      background: rgba(0,0,0,1);
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  &__sidebar-close {
+    position: relative;
+    top: 3.5em;
+    height: calc(100vh - 3.5em);
   }
 }

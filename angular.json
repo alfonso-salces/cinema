@@ -115,5 +115,8 @@
       }
     }
   },
-  "defaultProject": "Cinema"
+  "defaultProject": "Cinema",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

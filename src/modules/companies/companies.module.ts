@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { CompaniesPage } from './companies.page';
 import { CompaniesRoutingModule } from './companies-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CompaniesService } from './services/companies.service';
+import { StoreModule } from '@ngrx/store';
+import { companiesFeatureKey, reducer } from './store/reducers/companies.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CompaniesEffects } from './store/effects/companies.effects';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     HttpClientModule,
     CompaniesRoutingModule,
+    StoreModule.forFeature(companiesFeatureKey, reducer),
+    EffectsModule.forFeature([CompaniesEffects])
   ],
   declarations: [CompaniesPage],
   providers: [CompaniesService]

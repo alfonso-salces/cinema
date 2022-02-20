@@ -1,0 +1,11 @@
+@import "_variables";
+
+@mixin breakpoint($query) {
+  @if map-has-key($breakpoints, $query) {
+    @media #{inspect(map-get($breakpoints, $query))} {
+      @content;
+    }
+  } @else {
+    @warn "Valor introducido: `#{$query}`. Breakpoints disponibles: #{map-keys($breakpoints)}.";
+  }
+}

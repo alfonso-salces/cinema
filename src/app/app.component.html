@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<dle-sidebar></dle-sidebar>
+<dle-menu [sidebarOpen]="true"></dle-menu>
+
+<div [ngClass]="{'main-wrapper__sidebar-open': true}" class="main-wrapper">
+    <router-outlet></router-outlet>
+</div>

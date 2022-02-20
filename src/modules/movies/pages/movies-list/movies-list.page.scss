@@ -1,0 +1,26 @@
+@import "_main-theme";
+
+.movies-list {
+  display: grid;
+  padding-top: 1em;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+@include breakpoint(sm) {
+  .movies-list {
+    grid-template-columns: 100%;
+  }
+}
+@include breakpoint(md) {
+  .movies-list {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 1em;
+  }
+}
+@include breakpoint(lg) {
+  .movies-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 1em;
+  }
+}

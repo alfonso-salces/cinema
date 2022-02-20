@@ -1,0 +1,8 @@
+<div class="movies-list">
+  <ng-container *ngIf="(movies$ | async)?.length">
+    <dle-movie-card
+      [movie]="movie"
+      *ngFor="let movie of (movies$ | async) as movies"
+    ></dle-movie-card>
+  </ng-container>
+</div>

@@ -1,0 +1,9 @@
+<div class="movie-card" *ngIf="movie">
+  <h1>{{ movie.title }}</h1>
+  <img [src]="movie.image" />
+  <div class="movie-card--genre">
+    <span *ngFor="let genre of movie.genres" class="movie-card--genre--chip">
+      {{ genre.name }}
+    </span>
+  </div>
+</div>

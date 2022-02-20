@@ -42,6 +42,5 @@
 @include breakpoint(md) {
     .sidebar {
         width: 300px;
-        border-right: 1px solid $primaryBackgroundColor;
     }
 }

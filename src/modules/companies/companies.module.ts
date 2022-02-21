@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompaniesPage } from './companies.page';
 import { CompaniesRoutingModule } from './companies-routing.module';
-import { HttpClientModule } from '@angular/common/http';
 import { CompaniesService } from './services/companies.service';
 import { StoreModule } from '@ngrx/store';
 import { companiesFeatureKey, reducer } from './store/reducers/companies.reducer';
@@ -12,7 +11,6 @@ import { CompaniesEffects } from './store/effects/companies.effects';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     CompaniesRoutingModule,
     StoreModule.forFeature(companiesFeatureKey, reducer),
     EffectsModule.forFeature([CompaniesEffects])

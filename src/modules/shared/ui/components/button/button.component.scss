@@ -1,0 +1,20 @@
+@import '_main-theme';
+
+.button {
+    border: none;
+    font-family: $textFontFamily;
+    font-size: $subtitleFontSize;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    &--primary {
+        @extend .button;
+        background: $primaryTextColor;
+        color: $primaryBackgroundColor;
+    }
+    &--primary {
+        @extend .button;
+        background: $primaryBackgroundColor;
+        color: $primaryTextColor;
+    }
+}

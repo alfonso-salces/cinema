@@ -1,0 +1,22 @@
+@import "_main-theme";
+
+.movie-card {
+  border: 3px solid $primaryBackgroundColor;
+  max-width: 400px;
+  border-radius: 8px;
+  padding: .5em;
+  cursor: pointer;
+  &--genre {
+    margin: 0.7em 0.7em 0.7em 0;
+  }
+  img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  h1 {
+    margin: 0.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

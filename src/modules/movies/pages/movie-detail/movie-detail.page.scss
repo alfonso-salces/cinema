@@ -1,0 +1,31 @@
+@import "_main-theme";
+
+.movie-detail {
+  padding: 1em;
+  font-family: $textFontFamily;
+  img {
+    width: 95%;
+    height: 400px;
+    margin: 0 2.5%;
+    border-radius: 1em;
+  }
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+    &--border {
+      border-bottom: 1px solid $secondaryBackgroundColor;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  article {
+    padding: 0 1em;
+    margin-bottom: 1em;
+  }
+  h2 {
+    margin-bottom: 0.5em;
+  }
+}

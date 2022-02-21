@@ -1,4 +1,4 @@
-<nav [ngClass]="{'sidebar-open': sidebarOpen}" class="navbar">
-  <img class="navbar--icon" [src]="'assets/icons/more.png'" (click)="openSidebar()" />
-  <h1>{{ 'Hola' }}</h1>
+<nav [ngClass]="{ 'sidebar-open': sidebarOpen }" class="navbar">
+  <img class="navbar--icon" [src]="(config$ | async)?.icon" (click)="openSidebar()" />
+  <h1>{{ (config$ | async)?.title }}</h1>
 </nav>

@@ -1,9 +1,13 @@
 export interface Movie {
   id: number;
   title: string;
-  description: string;
-  companyId: number;
+  poster: null | string;
+  genre: string[];
+  year: number;
   duration: number;
+  imdbRating: number;
+  actors: number[];
+  company?: number;
 }
 
 /**
@@ -12,3 +16,9 @@ export interface Movie {
 export type MovieQueryParams = {
   [key: string]: string;
 };
+
+export enum ViewMode {
+  CREATE_MOVIE = 'create-movie',
+  EDIT_MOVIE = 'edit-movie',
+  READ_MOVIE_DETAIL = 'movie-detail',
+}

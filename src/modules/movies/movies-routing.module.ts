@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateMoviePage } from './pages/create-movie/create-movie.page';
-import { MoviesPage } from './pages/movies-list/movies.page';
+import { MovieDetailPage } from './pages/movie-detail/movie-detail.page';
+import { MoviesListPage } from './pages/movies-list/movies-list.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MoviesPage,
+    component: MoviesListPage,
   },
   {
     path: 'create-movie',
-    component: CreateMoviePage,
+    component: MovieDetailPage,
   },
   {
     path: 'edit-movie:id',
-    component: CreateMoviePage,
+    component: MovieDetailPage,
+  },
+  {
+    path: 'movie-detail/:id',
+    component: MovieDetailPage,
   },
 ];
 

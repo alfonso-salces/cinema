@@ -1,8 +1,16 @@
 <dle-sidebar *ngIf="isOpenSidebar$ | async"></dle-sidebar>
 <dle-menu [sidebarOpen]="isOpenSidebar$ | async"></dle-menu>
 
+<div class="loading-spinner rotate" *ngIf="loading$ | async">
+  <img src="assets/icons/loading.png" />
+</div>
+
 <div
-  [ngClass]="{ 'main-wrapper__sidebar-open': (isOpenSidebar$ | async), 'main-wrapper__sidebar-close': !(isOpenSidebar$ | async)}"
+  [ngClass]="{
+    'main-wrapper__sidebar-open': (isOpenSidebar$ | async),
+    'main-wrapper__sidebar-close': !(isOpenSidebar$ | async),
+    'main-wrapper__loading': (loading$ | async)
+  }"
   class="main-wrapper"
   (click)="openSidebar()"
 >

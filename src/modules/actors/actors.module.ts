@@ -7,14 +7,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { actorsFeatureKey, reducer } from './store/reducers/actors.reducer';
 import { ActorsEffects } from './store/effects/actors.effects';
 import { ActorsService } from './services/actors.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [ActorsPage],
   imports: [
     CommonModule,
     ActorsRoutingModule,
-    HttpClientModule,
     StoreModule.forFeature(actorsFeatureKey, reducer),
     EffectsModule.forFeature([ActorsEffects]),
   ],

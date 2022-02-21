@@ -1,0 +1,64 @@
+<ng-container *ngIf="(viewMode$ | async) === viewMode.READ_MOVIE_DETAIL">
+  <section *ngIf="movieDetail$ | async as movie" class="movie-detail">
+    <picture>
+      <img [src]="movie.poster" />
+    </picture>
+    <article
+      *ngIf="movie.imdbRating && movie.duration"
+      class="movie-detail__subtitle"
+    >
+      <div>
+        <h2>{{ 'score' | translate }}</h2>
+        <p>{{movie.imdbRating}}</p>
+      </div>
+      <div>
+        <h2>{{ 'duration' | translate }}</h2>
+        <p>{{movie.duration | hoursMinutes }}</p>
+      </div>
+    </article>
+    <article *ngIf="movie.actors?.length">
+      <h2 class="movie-detail__subtitle--border">
+        {{ 'actors' | translate }}:
+      </h2>
+      <ul>
+        <li *ngFor="let actor of actorsNamesFromCurrentMovie$ | async">
+          {{ actor }}
+        </li>
+      </ul>
+    </article>
+    <article *ngIf="movie.actors?.length">
+      <h2 class="movie-detail__subtitle--border">
+        {{ 'company' | translate }}:
+      </h2>
+      <p>{{ (companyFromCurrentMovie$ | async)?.name }}</p>
+    </article>
+    <article *ngIf="movie.genre">
+      <h2 class="movie-detail__subtitle--border">{{ 'genre' | translate }}:</h2>
+      <dle-chip [className]="'inline-block'" [texts]="movie.genre"></dle-chip>
+    </article>
+  </section>
+</ng-container>
+<dle-edit-movie-form
+  [movie]="movieDetail$ | async"
+  [genres]="genres$ | async"
+  [selectedActorsNames]="actorsNamesFromCurrentMovie$ | async"
+  [selectedActors]="actorsFromCurrentMovie$ | async"
+  [actors]="actors$ | async"
+  [company]="company$ | async"
+  [companies]="companies$ | async"
+  (onMovieSave)="onMovieSave($event)"
+  *ngIf="(viewMode$ | async) !== viewMode.READ_MOVIE_DETAIL"
+></dle-edit-movie-form>
+
+<div class="fab">
+  <dle-fab
+    *ngIf="(viewMode$ | async) === viewMode.READ_MOVIE_DETAIL && (movieDetail$ | async)"
+    (click)="onEditClick()"
+    [config]="{backgroundColor: 'background--edit', icon: 'assets/icons/pencil.png'}"
+  ></dle-fab>
+  <dle-fab
+    *ngIf="(viewMode$ | async) === viewMode.READ_MOVIE_DETAIL && (movieDetail$ | async)"
+    (click)="onRemoveClick()"
+    [config]="{backgroundColor: 'background--remove', icon: 'assets/icons/delete.png'}"
+  ></dle-fab>
+</div>

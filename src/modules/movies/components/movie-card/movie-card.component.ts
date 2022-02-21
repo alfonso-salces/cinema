@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Movie } from '../../models/movies.model';
 
 @Component({
@@ -8,6 +8,6 @@ import { Movie } from '../../models/movies.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCardComponent {
-  @Input()
-  movie!: Movie | null;
+  @Input() movie!: Movie | null;
+  @Output() onMovieClick: EventEmitter<Movie> = new EventEmitter();
 }

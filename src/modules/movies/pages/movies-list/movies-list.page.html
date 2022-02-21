@@ -2,7 +2,14 @@
   <ng-container *ngIf="(movies$ | async)?.length">
     <dle-movie-card
       [movie]="movie"
+      (onMovieClick)="navigateToMovie($event)"
       *ngFor="let movie of (movies$ | async) as movies"
     ></dle-movie-card>
   </ng-container>
+  <div class="fab">
+    <dle-fab
+      (click)="onAddClick()"
+      [config]="{backgroundColor: 'background--add', icon: 'assets/icons/plus.png'}"
+    ></dle-fab>
+  </div>
 </div>

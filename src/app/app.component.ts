@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { setSidebarIsOpen } from '../core/store/actions/sidebar.actions';
-import { selectSidebarIsOpen } from '../core/store/selectors/sidebar.selectors';
+import { take } from 'rxjs';
+import { setSidebarIsOpen } from '../core/store/actions/core.actions';
+import {
+  selectLoading,
+  selectSidebarIsOpen,
+} from '../core/store/selectors/core.selectors';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +15,13 @@ import { selectSidebarIsOpen } from '../core/store/selectors/sidebar.selectors';
 })
 export class AppComponent {
   readonly isOpenSidebar$ = this.store$.select(selectSidebarIsOpen);
+  readonly loading$ = this.store$.select(selectLoading);
   constructor(private readonly store$: Store) {}
   openSidebar() {
-    this.store$.dispatch(setSidebarIsOpen({ isOpen: false }));
+    this.isOpenSidebar$.pipe(take(1)).subscribe((isOpen) => {
+      if (isOpen) {
+        this.store$.dispatch(setSidebarIsOpen({ isSidebarOpen: false }));
+      }
+    });
   }
 }

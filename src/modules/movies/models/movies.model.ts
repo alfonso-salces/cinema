@@ -1,16 +1,13 @@
-import { Actor } from "src/modules/actors/models/actors.models";
-
 export interface Movie {
   id: number;
   title: string;
-  description: string;
-  companyId: number;
-  duration: number; // duration in minutes
-  actors: Actor[];
-  genres: Genre[];
+  poster: null | string;
+  genre: string[];
   year: number;
-  score: number;
-  image: string;
+  duration: number;
+  imdbRating: number;
+  actors: number[];
+  company?: number;
 }
 
 /**
@@ -20,7 +17,8 @@ export type MovieQueryParams = {
   [key: string]: string;
 };
 
-export interface Genre {
-  id: number;
-  name: string;
+export enum ViewMode {
+  CREATE_MOVIE = 'create-movie',
+  EDIT_MOVIE = 'edit-movie',
+  READ_MOVIE_DETAIL = 'movie-detail',
 }

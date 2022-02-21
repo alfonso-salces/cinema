@@ -1,411 +1,268 @@
 {
-  "companies": [
+  "movies": [
     {
       "id": 1,
-      "name": "Universal Pictures",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Universal_Pictures_logo.svg/1200px-Universal_Pictures_logo.svg.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+      "title": "Dancing Lady",
+      "poster": "https://dummyimage.com/400x600.png/cc0000/ffffff",
+      "genre": ["Comedy", "Musical", "Romance"],
+      "year": 2006,
+      "duration": 161,
+      "imdbRating": 8.27,
+      "actors": [4, 5, 6]
     },
     {
       "id": 2,
-      "name": "Paramouth Pictures",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Paramount_Plus.svg/1200px-Paramount_Plus.svg.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+      "title": "Mooring, The",
+      "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
+      "genre": ["Horror", "Thriller"],
+      "year": 1987,
+      "duration": 187,
+      "imdbRating": 1.99,
+      "actors": [5, 6]
     },
     {
       "id": 3,
-      "name": "Columbia Pictures",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Columbia_Pictures_logo.png",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
+      "title": "Black Rain (Kuroi ame)",
+      "poster": "http://dummyimage.com/400x600.png/5fa2dd/ffffff",
+      "genre": ["Drama", "War"],
+      "year": 2010,
+      "duration": 175,
+      "imdbRating": 6.25,
+      "actors": [1]
     },
     {
       "id": 4,
-      "name": "Warner Bros",
-      "image": "https://static.wikia.nocookie.net/samuraijack/images/d/d4/Warner_Bros._Entertainment.png/revision/latest?cb=20200913223749&path-prefix=es",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat enim porta ex auctor vehicula. Donec maximus venenatis scelerisque."
-    }
-  ],
-  "movies": [
-    {
-      "id": 36,
-      "title": "non",
-      "description": "Natus iusto modi magni vitae earum minima in nisi dolores.",
-      "companyId": 15,
-      "duration": 38,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 30,
-      "score": 5,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "title": "Spring Break Shark Attack",
+      "poster": "https://dummyimage.com/400x600.png/cc0000/ffffff",
+      "genre": ["Adventure", "Drama", "Horror"],
+      "year": 1985,
+      "duration": 190,
+      "imdbRating": 3.66,
+      "actors": [8, 9, 10]
     },
     {
-      "id": 24,
-      "title": "quo",
-      "description": "Repellendus sed error recusandae laudantium consequuntur. Dolorum qui dolorem aut non esse qui odit. Sequi et neque dolorum a distinctio pariatur et.",
-      "companyId": 18,
-      "duration": 3,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 0,
-      "score": 10,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 5,
+      "title": "Eulogy",
+      "poster": "http://dummyimage.com/400x600.png/ff4444/ffffff",
+      "genre": ["Comedy", "Crime", "Drama"],
+      "year": 1993,
+      "duration": 117,
+      "imdbRating": 5.36,
+      "actors": [6, 7, 8]
     },
     {
-      "id": 27,
-      "title": "Aut possimus est vel neque enim. Inventore ea est. Iste ipsum in autem.\n \rOfficiis possimus culpa velit ut sint ut. Autem odit dolore beatae odit. Suscipit deleniti quos accusamus est ducimus ut. Numquam et sed voluptatem nulla distinctio quo delectus voluptas. Sed qui non sit quia aliquid qui in dolor quaerat.\n \rNulla doloribus nisi nemo iure id ut et. Est sit minus amet id harum soluta. Sed non sunt cupiditate eius mollitia.",
-      "description": "Explicabo doloribus aperiam recusandae assumenda hic repellendus sunt est maxime.",
-      "companyId": 1,
-      "duration": 16,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 45,
-      "score": 33,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 6,
+      "title": "V/H/S: Viral",
+      "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
+      "genre": ["Horror", "Thriller"],
+      "year": 1995,
+      "duration": 239,
+      "imdbRating": 6.99,
+      "actors": [3, 4, 5]
     },
     {
-      "id": 46,
-      "title": "Nulla tempora non deserunt. Odit voluptas debitis maiores voluptatem maxime et accusantium quia distinctio. Omnis sequi qui sint minima ea. Magni tempore asperiores repudiandae omnis voluptas optio doloribus facere. Et error et quia velit dolor.",
-      "description": "Quod ut ducimus doloremque. Ut ducimus quibusdam quis ab. Et ut inventore nisi doloremque enim magni.\n \rRerum nisi quae totam delectus. Et ut animi atque odit unde. Repudiandae quia ut sed perspiciatis exercitationem officia voluptatum incidunt.\n \rQui repellat iste voluptates quis. Porro est nemo in possimus culpa temporibus maxime reprehenderit fugit. Neque fugit nulla porro. Eaque et dicta earum est hic. Omnis dolorem et veritatis tempore perspiciatis vero voluptatem possimus ut.",
-      "companyId": 16,
-      "duration": 13,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 10,
-      "score": 28,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 7,
+      "title": "Venus Wars (Venus Senki)",
+      "poster": "https://dummyimage.com/400x600.png/cc0000/ffffff",
+      "genre": ["Action", "Animation", "Sci-Fi", "War"],
+      "year": 1992,
+      "duration": 67,
+      "imdbRating": 6.77,
+      "actors": [1, 3, 5]
     },
     {
-      "id": 26,
-      "title": "Et iste perferendis cum totam rerum quod inventore magni. Sed non ab eos et quos voluptate. Ut quis sed illum maiores sint. Fugit dolores inventore dignissimos est corporis consequatur maxime quia.",
-      "description": "Nobis sequi quos ut vero et quam quas est quod. Omnis consequatur deserunt ad vero rerum reiciendis minus. Sit non quasi et ea aut dolores quia et qui.",
-      "companyId": 41,
-      "duration": 22,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 32,
-      "score": 8,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 8,
+      "title": "Godzilla vs. Mechagodzilla II (Gojira VS Mekagojira)",
+      "poster": null,
+      "genre": ["Action", "Drama", "Sci-Fi"],
+      "year": 1993,
+      "duration": 121,
+      "imdbRating": 5.36,
+      "actors": [3, 4, 5]
     },
     {
-      "id": 0,
-      "title": "esse exercitationem vero",
-      "description": "Corrupti pariatur qui error iste officia itaque consequatur et.",
-      "companyId": 14,
-      "duration": 16,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 31,
-      "score": 9,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 9,
+      "title": "Alien Nation: The Udara Legacy",
+      "poster": "http://dummyimage.com/400x600.png/5fa2dd/ffffff",
+      "genre": ["Sci-Fi"],
+      "year": 1997,
+      "duration": 125,
+      "imdbRating": 2.07,
+      "actors": [7, 8, 9]
     },
     {
-      "id": 1,
-      "title": "Repellat minima laudantium. Veniam cum laudantium minus et. Laboriosam rem neque alias debitis reprehenderit voluptas. Accusamus tempore voluptatum omnis dignissimos sit.",
-      "description": "Cum temporibus sunt dolores et assumenda explicabo maxime rem dolor. Est qui recusandae esse sunt similique quis aut. Non harum dolorem excepturi id nesciunt. In dignissimos rerum et beatae sint. Aut unde sint a facilis corporis omnis repudiandae.\n \rAb non ut. Necessitatibus et fugit accusamus suscipit repudiandae laborum error sit. Sit reiciendis nam voluptatem ut. Fugiat possimus fugit neque nostrum. Vel nihil odio nam ut reiciendis quisquam eaque quas. Nihil fugiat voluptatem.\n \rIllo iure labore. Veritatis explicabo commodi veritatis. Nostrum est et amet voluptatem.",
-      "companyId": 34,
-      "duration": 27,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 26,
-      "score": 44,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
-    },
-    {
-      "id": 40,
-      "title": "Ut blanditiis eum blanditiis molestias sunt. Atque nostrum dolor consequatur cum velit totam amet. Impedit minus asperiores in autem qui repellat deserunt eaque velit. Perferendis consequatur nam consectetur ut iste illum accusamus similique nostrum. Perspiciatis veritatis quidem. Laborum fugiat aut et velit dicta maxime porro rerum dolorem.",
-      "description": "Voluptate eveniet maxime minima ut dicta ut.",
-      "companyId": 8,
-      "duration": 38,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 47,
-      "score": 30,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
-    },
-    {
-      "id": 16,
-      "title": "minima id qui",
-      "description": "aspernatur accusantium numquam",
-      "companyId": 7,
-      "duration": 14,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 8,
-      "score": 34,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
-    },
-    {
-      "id": 41,
-      "title": "Corporis autem perspiciatis fuga repudiandae quia.",
-      "description": "maiores voluptas autem",
-      "companyId": 46,
-      "duration": 1,
-      "actors": [
-        {
-          "id": 14,
-          "name": "Asperiores reprehenderit id. Eaque maiores doloremque ut a ut. Perspiciatis sint mollitia autem velit consequatur voluptatem aliquam nam. Quibusdam qui magnam veniam at. Dolor quia saepe nobis. Est facere officia quaerat.",
-          "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-          "age": 6,
-          "biography": "Et non facere pariatur et."
-        },
-        {
-          "id": 28,
-          "name": "Ut quisquam eius animi similique blanditiis maxime. Quae sapiente nobis hic quisquam quae vero dolores praesentium. Expedita aut quam earum eveniet deserunt tenetur.",
-          "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-          "age": 39,
-          "biography": "Voluptates repellat qui eum voluptas."
-        }
-      ],
-      "genres": [
-        { "id": 50, "name": "Misterio" },
-        { "id": 45, "name": "Ciencia ficción" }
-      ],
-      "year": 13,
-      "score": 36,
-      "image": "https://static.posters.cz/image/750/posters/jurassic-park-classic-logo-i57759.jpg"
+      "id": 10,
+      "title": "Butterflies Have No Memories",
+      "poster": "http://dummyimage.com/400x600.png/dddddd/000000",
+      "genre": [],
+      "year": 1990,
+      "duration": 73,
+      "imdbRating": 4.39,
+      "actors": [6, 9, 11]
     }
   ],
   "actors": [
     {
-      "id": 14,
-      "name": "Alfonso Cano",
-      "photo": "Et quibusdam qui architecto molestiae libero qui autem ratione molestias. Soluta veniam saepe. Quaerat sit nemo alias rem blanditiis nam similique et. Eum et mollitia deleniti natus consequatur sint sit. Autem ea ipsum sed expedita cumque vitae expedita. Molestias aut aut odio omnis architecto a ut sit provident.",
-      "age": 6,
-      "biography": "Et non facere pariatur et."
+      "id": 1,
+      "first_name": "Isaak",
+      "last_name": "McQuode",
+      "gender": "Male",
+      "bornCity": "Ciduren",
+      "birthdate": "24/12/1957",
+      "img": "http://dummyimage.com/600x400.png/dddddd/000000",
+      "rating": 2.03,
+      "movies": [3, 7]
     },
     {
-      "id": 28,
-      "name": "Carlos Pérez",
-      "photo": "Adipisci voluptatem voluptatem consequatur modi eum dolorum. Molestiae provident et dolorem ipsum voluptatem libero. Nihil voluptatibus qui amet et consequatur aspernatur nostrum vel. Non dolore minus laboriosam. Doloribus ea fugit vero repudiandae. Repellat esse quia consequatur maiores debitis neque.",
-      "age": 39,
-      "biography": "Voluptates repellat qui eum voluptas."
+      "id": 2,
+      "first_name": "Rory",
+      "last_name": "Chanders",
+      "gender": "Male",
+      "bornCity": "Cijengkol",
+      "birthdate": "19/04/1975",
+      "img": "http://dummyimage.com/600x400.png/5fa2dd/000000",
+      "rating": 2.43,
+      "movies": []
     },
     {
-      "id": 31,
-      "name": "Sandra Duarte",
-      "photo": "quasi et voluptatem",
-      "age": 35,
-      "biography": "Debitis dolorem odio neque perferendis adipisci labore. Tempore ipsa quo. Ut officiis quia cum sequi possimus et. Perspiciatis et sunt dolores nobis enim nesciunt molestias ea excepturi. Possimus non vero ipsa voluptatibus ea sunt dicta."
+      "id": 3,
+      "first_name": "Lew",
+      "last_name": "Meehan",
+      "gender": "Male",
+      "bornCity": "Łanięta",
+      "birthdate": "10/04/1986",
+      "img": null,
+      "rating": 7.92,
+      "movies": [6, 7, 8]
     },
     {
-      "id": 22,
-      "name": "Pedro Fernández",
-      "photo": "Sint aut et commodi deserunt facilis placeat ex sed accusamus. Delectus aut voluptate pariatur doloremque sunt dolorem ut.",
-      "age": 9,
-      "biography": "Dicta expedita officia. Dolorem iusto excepturi nulla soluta qui id omnis. Rerum illo perferendis voluptatem nemo nemo."
+      "id": 4,
+      "first_name": "Marci",
+      "last_name": "Noads",
+      "gender": "Female",
+      "bornCity": "Jurm",
+      "birthdate": "04/08/1990",
+      "img": "http://dummyimage.com/600x400.png/4fa25d/000000",
+      "rating": 4.37,
+      "movies": [1, 6, 8]
     },
     {
-      "id": 35,
-      "name": "Julia Flores",
-      "photo": "Commodi ipsum recusandae doloribus nulla. Officiis minima eius eos nihil error voluptatem voluptas aperiam. Dignissimos quia rem recusandae iure ducimus id. Ullam quisquam magnam quia ratione itaque repudiandae sed quidem repudiandae. Excepturi ut omnis laudantium aut neque.\n \rQuasi enim omnis nemo culpa. Et reprehenderit ipsum. Aut sequi molestiae sed voluptatibus quam est praesentium qui. Voluptatem enim autem ab quisquam. Occaecati nihil fuga laborum. Aperiam omnis consectetur.\n \rAccusamus doloribus qui similique natus blanditiis. Autem maxime reiciendis ipsam ullam voluptate soluta nam. At repudiandae voluptas tempora nulla. Explicabo corrupti odit voluptas ipsa ab. Adipisci nam a dolore delectus itaque quo omnis nihil. Qui voluptatem velit dolor repellat.",
-      "age": 18,
-      "biography": "molestias voluptas cumque"
+      "id": 5,
+      "first_name": "Jordan",
+      "last_name": "Yeskov",
+      "gender": "Male",
+      "bornCity": "Gouqi",
+      "birthdate": "30/12/1990",
+      "img": "https://dummyimage.com/600x400.png/2f125d/ffffff",
+      "rating": 3.92,
+      "movies": [1, 2, 6, 7, 8]
     },
     {
-      "id": 41,
-      "name": "Andrea Zamora",
-      "photo": "magni",
-      "age": 49,
-      "biography": "Quo vero eligendi quidem aut."
+      "id": 6,
+      "first_name": "Hale",
+      "last_name": "Bangs",
+      "gender": "Male",
+      "bornCity": "Pitomača",
+      "birthdate": "02/01/1968",
+      "img": "https://dummyimage.com/600x400.png/bf125d/ffffff",
+      "rating": 8.79,
+      "movies": [1, 2, 5, 10]
     },
     {
       "id": 7,
-      "name": "Federico Pérez",
-      "photo": "Rerum ipsa numquam.",
-      "age": 23,
-      "biography": "Beatae nemo consequatur omnis architecto expedita. Voluptas qui eos in fugit. Ab architecto voluptatem quia. Culpa excepturi odit nobis provident at hic quasi. Esse neque voluptatem. Labore et reprehenderit ea et voluptas.\n \rQuia ut non quo. Facere ut accusantium et porro dolores deserunt voluptatibus at voluptatem. Adipisci deserunt minus. Omnis quasi officia alias culpa dolorem minus est beatae.\n \rQui quae eius ut ipsam consequatur. Esse harum maxime ipsum pariatur enim iste dolorem blanditiis reprehenderit. Et natus dolorem nemo voluptatum rerum veniam. Sed sed repellat dolor et rerum corrupti. Dignissimos nihil voluptatum nemo magnam dolorum. Quos in dolor impedit exercitationem odit doloribus necessitatibus."
+      "first_name": "Quint",
+      "last_name": "Critcher",
+      "gender": "Male",
+      "bornCity": "Fulong",
+      "birthdate": "04/09/1979",
+      "img": "https://dummyimage.com/600x400.png/bf12fd/ffffff",
+      "rating": 9.82,
+      "movies": [5, 9]
     },
     {
       "id": 8,
-      "name": "Ana Ramírez",
-      "photo": "ut",
-      "age": 17,
-      "biography": "Qui consectetur voluptate eum doloribus. Perferendis sed neque perspiciatis incidunt quam distinctio qui harum at. Asperiores et perferendis aut. Voluptatem sequi sit."
+      "first_name": "Angela",
+      "last_name": "Kaming",
+      "gender": "Female",
+      "bornCity": "Khorramābād",
+      "birthdate": "22/02/1966",
+      "img": "https://dummyimage.com/600x400.png/1f121d/ffffff",
+      "rating": 7.42,
+      "movies": [4, 5, 9]
     },
     {
-      "id": 8,
-      "name": "Andrés Fernández",
-      "photo": "Ducimus maiores quo eum sed officiis placeat.",
-      "age": 29,
-      "biography": "Itaque cumque et exercitationem. Quidem voluptatem ab nobis maxime quis sed suscipit tenetur. Aspernatur molestias laudantium voluptate at.\n \rAut ea rem aut vel cupiditate amet cum pariatur. In eius non eligendi. Expedita cumque facilis et molestiae facere necessitatibus impedit fuga harum. Dicta quia impedit.\n \rAut repudiandae aut sint. Aspernatur consequatur non. Iste doloribus porro eos similique delectus."
+      "id": 9,
+      "first_name": "Orson",
+      "last_name": "Cud",
+      "gender": "Female",
+      "bornCity": "Notre-Dame-de-l'Île-Perrot",
+      "birthdate": "14/09/1978",
+      "img": null,
+      "rating": 5.55,
+      "movies": [4, 9, 10]
     },
     {
-      "id": 7,
-      "name": "Pedro Jiménez",
-      "photo": "Nulla assumenda eos. Qui mollitia ad enim omnis consequuntur illum. Et aspernatur quis dolores unde nesciunt odio. Adipisci sit velit cum dicta nemo suscipit consequatur. Autem culpa quis.",
-      "age": 21,
-      "biography": "Similique laborum quasi maxime voluptatem qui excepturi eligendi eaque. Quidem quia pariatur sit dignissimos doloremque. Voluptas eaque fugiat aut voluptatem qui et. Ad dignissimos reprehenderit.\n \rIste sed placeat laudantium dolore vitae perspiciatis atque. Et nihil in et aperiam velit voluptates. Blanditiis molestias deleniti temporibus corporis. Rerum corporis aliquam enim fugiat dolorem sint. Aperiam eligendi consequatur ut est impedit. Magnam omnis sit accusantium.\n \rQuis optio eaque pariatur labore dolore eveniet eum quaerat. A cum laudantium unde minus. Et eligendi a dolorum numquam corporis enim autem ipsam. Voluptates neque ullam sunt."
+      "id": 10,
+      "first_name": "Murielle",
+      "last_name": "Carvilla",
+      "gender": "Female",
+      "bornCity": "Wakimachi",
+      "birthdate": "28/10/1953",
+      "img": "https://dummyimage.com/600x400.png/1f12ff/ffffff",
+      "rating": 5.39,
+      "movies": [4]
     }
   ],
-  "genres": [
-    { "id": 1, "name": "Terror" },
-    { "id": 15, "name": "Acción" },
-    { "id": 47, "name": "Romance" },
-    { "id": 8, "name": "Drama" },
-    { "id": 48, "name": "Comedia" },
-    { "id": 50, "name": "Misterio" },
-    { "id": 45, "name": "Ciencia ficción" }
+  "companies": [
+    {
+      "id": 1,
+      "name": "Jacobson-Dickinson",
+      "country": "Colombia",
+      "createYear": 2010,
+      "employees": 81,
+      "rating": 4.32,
+      "movies": [1, 10]
+    },
+    {
+      "id": 2,
+      "name": "Quitzon-Erdman",
+      "country": "China",
+      "createYear": 2005,
+      "employees": 611,
+      "rating": 8.19,
+      "movies": [2, 3, 4]
+    },
+    {
+      "id": 3,
+      "name": "Hane, Metz and Morar",
+      "country": "Greece",
+      "createYear": 1994,
+      "employees": 511,
+      "rating": 8.09,
+      "movies": [5, 6, 7]
+    },
+    {
+      "id": 4,
+      "name": "Baumbach-Maggio",
+      "country": "Philippines",
+      "createYear": 2005,
+      "employees": 42,
+      "rating": 9.26,
+      "movies": [8, 9]
+    },
+    {
+      "id": 5,
+      "name": "Kub, Kertzmann and Sanford",
+      "country": "China",
+      "createYear": 1999,
+      "employees": 921,
+      "rating": 1.77,
+      "movies": []
+    }
+  ],
+  "menu": [
+    { "id": 0, "path": "/movies" },
+    { "id": 1, "path": "/companies" },
+    { "id": 2, "path": "/actors" }
   ]
 }

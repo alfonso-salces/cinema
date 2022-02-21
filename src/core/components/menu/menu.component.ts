@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { setSidebarIsOpen } from '../../store/actions/sidebar.actions';
+import { selectMenuConfig } from '../../store/selectors/core.selectors';
+import { setSidebarIsOpen } from '../../../core/store/actions/core.actions';
 
 @Component({
   selector: 'dle-menu',
@@ -10,8 +11,9 @@ import { setSidebarIsOpen } from '../../store/actions/sidebar.actions';
 })
 export class MenuComponent {
   @Input() sidebarOpen: boolean | null = false;
+  readonly config$ = this.store$.select(selectMenuConfig);
   constructor(private readonly store$: Store) {}
   openSidebar() {
-    this.store$.dispatch(setSidebarIsOpen({isOpen: true}));
+    this.store$.dispatch(setSidebarIsOpen({isSidebarOpen: true}));
   }
 }

@@ -9,11 +9,11 @@ export class ActorsService {
   constructor(private readonly http: HttpClient) {}
 
   getActors(): Observable<Actor[]> {
-    return this.http.get<Actor[]>('localhost:3000/actors');
+    return this.http.get<Actor[]>('http://localhost:3000/actors');
   }
 
   getActorsFromMovie(movieId: number) {
-    return this.http.get<Actor[]>(`localhost:3000/actors/${movieId}`);
+    return this.http.get<Actor[]>(`http://localhost:3000/actors/${movieId}`);
   }
 
 }

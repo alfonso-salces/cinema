@@ -1,0 +1,67 @@
+<form *ngIf="movie" class="movie-form" [formGroup]="form">
+  <article>
+    <label>{{ "title" | translate }}</label>
+    <dle-input
+      [placeholder]="'title' | translate"
+      formControlName="title"
+    ></dle-input>
+  </article>
+  <article>
+    <label>{{ "poster" | translate }}</label>
+    <dle-input
+      [placeholder]="'poster' | translate"
+      formControlName="poster"
+    ></dle-input>
+  </article>
+  <article>
+    <label>{{ "genre" | translate }}</label>
+    <select multiple formControlName="genre">
+      <option [value]="option" *ngFor="let option of genres">
+        {{ option }}
+      </option>
+    </select>
+  </article>
+  <article>
+    <label>{{ "actors" | translate }}</label>
+    <select multiple formControlName="actors">
+      <option [value]="option.id" *ngFor="let option of actors">
+        {{ option.first_name }} {{ option.last_name }}
+      </option>
+    </select>
+  </article>
+  <article>
+    <label>{{ "company" | translate }}</label>
+    <select formControlName="company">
+      <option [value]="option.id" *ngFor="let option of companies">
+        {{ option.name }}
+      </option>
+    </select>
+  </article>
+  <article>
+    <label>{{ "year" | translate }}</label>
+    <dle-input
+      [placeholder]="'year' | translate"
+      [type]="'number'"
+      formControlName="year"
+    ></dle-input>
+  </article>
+  <article>
+    <label>{{ "duration" | translate }}</label>
+    <dle-input
+      [placeholder]="'duration' | translate"
+      [type]="'number'"
+      formControlName="duration"
+    ></dle-input>
+  </article>
+  <article>
+    <label>{{ "score" | translate }}</label>
+    <dle-input
+      [placeholder]="'score' | translate"
+      [type]="'number'"
+      formControlName="imdbRating"
+    ></dle-input>
+  </article>
+  <div class="movie-form__submit-button">
+    <dle-button [text]="'save' | translate" (click)="saveMovie()"></dle-button>
+  </div>
+</form>

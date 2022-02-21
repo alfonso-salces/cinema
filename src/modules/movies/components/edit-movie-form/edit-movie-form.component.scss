@@ -1,0 +1,20 @@
+@import "_main-theme";
+
+.movie-form {
+  display: block;
+  font-family: $textFontFamily;
+  padding: 1em;
+  margin: 0 2.5%;
+  article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  label {
+    padding-left: 0.5em;
+  }
+  &__submit-button {
+    float: right;
+  }
+}

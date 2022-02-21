@@ -25,13 +25,49 @@
 .main-wrapper {
   z-index: 1;
   box-sizing: border-box;
+  position: relative;
+  top: 3.5em;
   &__sidebar-open {
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.2;
+    overflow-x: none;
+    cursor: pointer;
   }
   &__sidebar-close {
-    position: relative;
-    top: 3.5em;
     height: calc(100vh - 3.5em);
+    cursor: default;
   }
+  &__loading {
+    @extend .main-wrapper__sidebar-open;
+  }
+}
+
+.loading-spinner {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  z-index: 4;
+  img {
+    width: 4em;
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+
+.fab {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }

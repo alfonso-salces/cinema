@@ -35,3 +35,6 @@ export const setMoviesGenres = createAction('[Movies] SET MOVIES GENRES', props<
 export const removeCurrentMovie = createAction('[Movies] REMOVE CURRENT MOVIE');
 export const saveMovie = createAction('[Movies] SAVE MOVIE', props<{movie: Movie}>());
 export const addMovieToCompany = createAction('[Movies] ADD MOVIE TO COMPANY', props<{companyId: number | undefined, movieId: number}>());
+export const editCompany = createAction('[Movies] EDIT COMPANY', props<{companyId: number | null | undefined, company: Company}>());
+export const saveCompany = createAction('[Movies] SAVE COMPANY', props<{company: Company}>());
+export const noAction = createAction('[Movies] NO ACTION');

@@ -4,12 +4,22 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { take } from 'rxjs/operators';
 import { Actor } from '../../../actors/models/actors.models';
 import { Company } from '../../../companies/models/companies.model';
-import { Movie } from '../../models/movies.model';
+import { Movie, ViewMode } from '../../models/movies.model';
+import {
+  getActors,
+  getCompanies,
+  getGenres,
+  setFilters,
+} from '../../store/actions/movies.actions';
+import { selectViewMode } from '../../store/selectors/movies.selectors';
 
 @Component({
   selector: 'dle-edit-movie-form',
@@ -17,7 +27,7 @@ import { Movie } from '../../models/movies.model';
   styleUrls: ['./edit-movie-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EditMovieFormComponent implements OnChanges {
+export class EditMovieFormComponent implements OnInit, OnChanges {
   @Input() movie!: Movie | undefined | null;
   @Input() genres!: string[] | undefined | null;
   @Input() selectedActorsNames!: string[] | undefined | null;
@@ -25,21 +35,28 @@ export class EditMovieFormComponent implements OnChanges {
   @Input() actors!: Actor[] | undefined | null;
   @Input() company!: Company | undefined | null;
   @Input() companies!: Company[] | undefined | null;
-  @Output() onMovieSave: EventEmitter<Movie> = new EventEmitter<Movie>();
+  @Output() onMovieSave: EventEmitter<{ movie: Movie; isEditing: boolean }> =
+    new EventEmitter<{ movie: Movie; isEditing: boolean }>();
   form!: FormGroup;
 
-  constructor(private readonly fb: FormBuilder) {
+  constructor(private readonly fb: FormBuilder, private readonly store: Store) {
     this.form = this.fb.group({
       id: new FormControl(),
       title: new FormControl(''),
       poster: new FormControl(''),
       genre: new FormControl(),
       actors: new FormControl(),
-      company: new FormControl(),
-      year: new FormControl(),
-      imdbRating: new FormControl(),
-      duration: new FormControl(),
+      company: new FormControl(''),
+      year: new FormControl(''),
+      imdbRating: new FormControl(''),
+      duration: new FormControl(''),
     });
+  }
+
+  ngOnInit(): void {
+    if (!this.actors?.length && !this.companies?.length) {
+      this.loadFormFieldsData();
+    }
   }
 
   ngOnChanges(): void {
@@ -47,22 +64,35 @@ export class EditMovieFormComponent implements OnChanges {
       this.form.patchValue(
         {
           id: this.movie?.id,
-          title: this.movie?.title,
-          poster: this.movie?.poster,
-          genre: this.movie?.genre,
-          actors: this.movie?.actors,
-          company: this.company?.id,
-          year: this.movie?.year,
-          imdbRating: this.movie?.imdbRating,
-          duration: this.movie?.duration,
+          title: this.movie?.title ?? '',
+          poster: this.movie?.poster ?? '',
+          genre: this.movie?.genre ?? '',
+          actors: this.movie?.actors ?? '',
+          company: this.company?.id ?? '',
+          year: this.movie?.year ?? '',
+          imdbRating: this.movie?.imdbRating ?? '',
+          duration: this.movie?.duration ?? '',
         },
         { emitEvent: false, onlySelf: true }
       );
     }
   }
 
+  loadFormFieldsData(): void {
+    this.store.dispatch(getActors());
+    this.store.dispatch(getCompanies());
+  }
+
   saveMovie() {
-    this.onMovieSave.emit(this.form.value);
+    this.store
+      .select(selectViewMode)
+      .pipe(take(1))
+      .subscribe((viewMove) => {
+        this.onMovieSave.emit({
+          movie: this.form.value,
+          isEditing: viewMove === ViewMode.EDIT_MOVIE,
+        });
+      });
   }
 
   onSelectGenres(event: any) {

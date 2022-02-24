@@ -1,5 +1,10 @@
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, take } from 'rxjs';
@@ -11,6 +16,7 @@ import {
   getMovieById,
   removeCurrentMovie,
   saveMovie,
+  setSelectedMovie,
   setViewMode,
 } from '../../store/actions/movies.actions';
 import {
@@ -30,7 +36,7 @@ import {
   styleUrls: ['./movie-detail.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MovieDetailPage implements OnInit {
+export class MovieDetailPage implements OnInit, OnDestroy {
   readonly movieDetail$: Observable<Movie | undefined | null> =
     this.store$.select(selectSelectedMovie);
   readonly actorsNamesFromCurrentMovie$: Observable<
@@ -84,5 +90,9 @@ export class MovieDetailPage implements OnInit {
     );
     this.store$.dispatch(saveMovie({ movie }));
     this.router.navigate([`/movies/movie-detail/${movie.id}`]);
+  }
+
+  ngOnDestroy(): void {
+    this.store$.dispatch(setSelectedMovie({ selectedMovie: null }));
   }
 }

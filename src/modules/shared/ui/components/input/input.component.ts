@@ -34,9 +34,7 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   writeValue(value: number | string): void {
-    if (value) {
-      this.value = value;
-    }
+    this.value = value;
   }
 
   registerOnChange(fn: any): void {

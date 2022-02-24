@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 export interface MenuItem {
     id: number;
@@ -9,6 +10,7 @@ export interface MenuItem {
 
 @Injectable()
 export class MoviesService {
+  private readonly apiUrl = `${environment.url}/menu`;
   constructor(private readonly http: HttpClient) {}
 
   /**
@@ -19,6 +21,6 @@ export class MoviesService {
    *
    */
   getMenu(): Observable<MenuItem[]> {
-    return this.http.get<MenuItem[]>('http://localhost:3000/menu');
+    return this.http.get<MenuItem[]>(this.apiUrl);
   }
 }

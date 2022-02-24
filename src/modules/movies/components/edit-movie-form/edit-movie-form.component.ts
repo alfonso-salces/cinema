@@ -9,15 +9,17 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { take } from 'rxjs/operators';
 import { Actor } from '../../../actors/models/actors.models';
 import { Company } from '../../../companies/models/companies.model';
-import { Movie } from '../../models/movies.model';
+import { Movie, ViewMode } from '../../models/movies.model';
 import {
   getActors,
   getCompanies,
   getGenres,
   setFilters,
 } from '../../store/actions/movies.actions';
+import { selectViewMode } from '../../store/selectors/movies.selectors';
 
 @Component({
   selector: 'dle-edit-movie-form',
@@ -33,7 +35,8 @@ export class EditMovieFormComponent implements OnInit, OnChanges {
   @Input() actors!: Actor[] | undefined | null;
   @Input() company!: Company | undefined | null;
   @Input() companies!: Company[] | undefined | null;
-  @Output() onMovieSave: EventEmitter<Movie> = new EventEmitter<Movie>();
+  @Output() onMovieSave: EventEmitter<{ movie: Movie; isEditing: boolean }> =
+    new EventEmitter<{ movie: Movie; isEditing: boolean }>();
   form!: FormGroup;
 
   constructor(private readonly fb: FormBuilder, private readonly store: Store) {
@@ -81,7 +84,15 @@ export class EditMovieFormComponent implements OnInit, OnChanges {
   }
 
   saveMovie() {
-    this.onMovieSave.emit(this.form.value);
+    this.store
+      .select(selectViewMode)
+      .pipe(take(1))
+      .subscribe((viewMove) => {
+        this.onMovieSave.emit({
+          movie: this.form.value,
+          isEditing: viewMove === ViewMode.EDIT_MOVIE,
+        });
+      });
   }
 
   onSelectGenres(event: any) {

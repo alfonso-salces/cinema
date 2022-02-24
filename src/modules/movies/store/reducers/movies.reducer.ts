@@ -4,9 +4,10 @@ import { Company } from '../../../companies/models/companies.model';
 import { Movie, MovieQueryParams, ViewMode } from '../../models/movies.model';
 import {
   addMovieToCompany,
-  removeCurrentMovie,
+  saveCompany,
   saveMovie,
   setFilters,
+  setMovie,
   setMovies,
   setMoviesActors,
   setMoviesCompanies,
@@ -40,6 +41,10 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
   on(setFilters, (state, { filters }) => ({ ...state, filters })),
+  on(setMovie, (state, { movie }) => ({
+    ...state,
+    movies: state?.movies ? [...state?.movies, movie] : [movie],
+  })),
   on(setMovies, (state, { movies }) => {
     const genres: string[] = [];
     movies?.forEach((movie) =>
@@ -58,6 +63,15 @@ export const reducer = createReducer(
   on(setMoviesActors, (state, { actors }) => ({ ...state, actors })),
   on(setMoviesGenres, (state, { genres }) => ({ ...state, genres })),
   on(setMoviesCompanies, (state, { companies }) => ({ ...state, companies })),
+  on(saveCompany, (state, { company }) => ({
+    ...state,
+    companies: state.companies.map((comp) => {
+      if (comp.id === company.id) {
+        comp = company;
+      }
+      return comp;
+    }),
+  })),
   on(saveMovie, (state, { movie }) => {
     if (state.selectedMovie) {
       return {
@@ -95,12 +109,5 @@ export const reducer = createReducer(
       return company;
     });
     return { ...state, companies };
-  }),
-  on(removeCurrentMovie, (state) => ({
-    ...state,
-    movies: state.movies?.filter(
-      (movie) => movie.id !== state.selectedMovie?.id
-    ),
-    selectedMovie: null,
-  }))
+  })
 );

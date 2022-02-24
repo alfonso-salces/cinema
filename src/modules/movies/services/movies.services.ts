@@ -37,7 +37,7 @@ export class MoviesService {
     return this.http.put<Movie>(`${this.apiUrl}/${movieId}`, movie);
   }
 
-  removeMovie(movieId: number): Observable<any> {
+  removeMovie(movieId: number | null | undefined): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${movieId}`);
   }
 }

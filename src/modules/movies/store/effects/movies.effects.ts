@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { from, map, Observable, of, switchMap, withLatestFrom } from 'rxjs';
@@ -7,10 +8,15 @@ import { ActorsService } from '../../../actors/services/actors.service';
 import { MoviesService } from '../../services/movies.services';
 import {
   addMovie,
+  addMovieToCompany,
+  editCompany,
   getActors,
   getCompanies,
   getMovieById,
   getMovies,
+  noAction,
+  removeCurrentMovie,
+  saveCompany,
   setMovie,
   setMovies,
   setMoviesActors,
@@ -36,10 +42,37 @@ export class MoviesEffects {
   readonly addMovie$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addMovie),
-      switchMap(({ movie }) =>
-        this.moviesService
-          .addMovie(movie)
-          .pipe(map((response) => setMovie({ movie: response })))
+      withLatestFrom(this.store$),
+      switchMap(
+        ([
+          { movie },
+          {
+            movies: { companies },
+          },
+        ]) =>
+          this.moviesService.addMovie(movie).pipe(
+            map((response) => {
+              this.store$.dispatch(setMovie({ movie: response }));
+              const company = companies.find(
+                (company) => movie.company === company.id
+              );
+              if (company) {
+                this.store$.dispatch(
+                  editCompany({
+                    companyId: movie?.company,
+                    company: {
+                      ...company,
+                      movies: company?.movies
+                        ? [...company?.movies, response.id]
+                        : [movie.id],
+                    },
+                  })
+                );
+              }
+              this.router.navigate([`/movies/movie-detail/${response.id}`]);
+              return noAction();
+            })
+          )
       )
     )
   );
@@ -50,7 +83,60 @@ export class MoviesEffects {
       switchMap(({ movieId, movie }) =>
         this.moviesService
           .updateMovie(movieId, movie)
-          .pipe(map((response) => setMovie({ movie: response })))
+          .pipe(
+            switchMap((response) => [
+              setMovie({ movie: response }),
+              addMovieToCompany({ movieId, companyId: movie.company }),
+              setSelectedMovie({ selectedMovie: response }),
+            ])
+          )
+      )
+    )
+  );
+
+  readonly removeMovie$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(removeCurrentMovie),
+      withLatestFrom(this.store$),
+      switchMap(
+        ([
+          ,
+          {
+            movies: { companies, selectedMovie },
+          },
+        ]) =>
+          this.moviesService.removeMovie(selectedMovie?.id).pipe(
+            map(() => {
+              if (selectedMovie) {
+                const company = companies.find(
+                  (company) => selectedMovie.company === company.id
+                );
+                if (company) {
+                  return editCompany({
+                    companyId: selectedMovie?.company,
+                    company: {
+                      ...company,
+                      movies: company.movies.filter(
+                        (companyMovie) => companyMovie !== selectedMovie.id
+                      ),
+                    },
+                  });
+                }
+              }
+              return noAction();
+            })
+          )
+      )
+    )
+  );
+
+  readonly updateCompany$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(editCompany),
+      switchMap(({ company, companyId }) =>
+        this.companiesService
+          .updateCompany(companyId, company)
+          .pipe(map((response) => saveCompany({ company: response })))
       )
     )
   );
@@ -81,39 +167,47 @@ export class MoviesEffects {
     this.actions$.pipe(
       ofType(getMovieById),
       withLatestFrom(this.store$),
-      switchMap(([{ id }, { movies, actors, companies }]): Observable<any> => {
-        if (!actors?.length) {
-          this.store$.dispatch(getActors());
-        }
-        if (!companies?.length) {
-          this.store$.dispatch(getCompanies());
-        }
-        if (movies?.length) {
-          return of(
-            setSelectedMovie({
-              selectedMovie: movies.find((movie) => movie.id === id),
-            })
+      switchMap(
+        ([
+          { id },
+          {
+            movies: { movies, actors, companies },
+          },
+        ]): Observable<any> => {
+          if (!actors?.length) {
+            this.store$.dispatch(getActors());
+          }
+          if (!companies?.length) {
+            this.store$.dispatch(getCompanies());
+          }
+          if (movies?.length) {
+            return of(
+              setSelectedMovie({
+                selectedMovie: movies.find((movie) => movie.id === id),
+              })
+            );
+          }
+          return this.moviesService.getMovies().pipe(
+            switchMap((response) =>
+              from([
+                setMovies({ movies: response }),
+                setSelectedMovie({
+                  selectedMovie: response?.find((movie) => movie.id === id),
+                }),
+              ])
+            )
           );
         }
-        return this.moviesService.getMovies().pipe(
-          switchMap((response) =>
-            from([
-              setMovies({ movies: response }),
-              setSelectedMovie({
-                selectedMovie: response?.find((movie) => movie.id === id),
-              }),
-            ])
-          )
-        );
-      })
+      )
     )
   );
 
   constructor(
     private readonly actions$: Actions,
     private readonly moviesService: MoviesService,
-    private readonly store$: Store<State>,
+    private readonly store$: Store<{ movies: State }>,
     private readonly actorsService: ActorsService,
-    private readonly companiesService: CompaniesService
+    private readonly companiesService: CompaniesService,
+    private readonly router: Router
   ) {}
 }

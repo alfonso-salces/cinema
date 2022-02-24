@@ -7,17 +7,17 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Actor } from '../../../actors/models/actors.models';
 import { Company } from '../../../companies/models/companies.model';
 import { Movie, ViewMode } from '../../models/movies.model';
 import {
-  addMovieToCompany,
+  addMovie,
   getMovieById,
   removeCurrentMovie,
-  saveMovie,
   setSelectedMovie,
   setViewMode,
+  updateMovie,
 } from '../../store/actions/movies.actions';
 import {
   selectActors,
@@ -81,15 +81,16 @@ export class MovieDetailPage implements OnInit, OnDestroy {
     this.router.navigate(['/movies']);
   }
 
-  onMovieSave(movie: Movie) {
+  onMovieSave({ movie, isEditing }: { movie: Movie; isEditing: boolean }) {
     if (movie.company && typeof movie.company !== 'number') {
       movie.company = parseInt(movie.company);
     }
     this.store$.dispatch(
-      addMovieToCompany({ companyId: movie.company, movieId: movie.id })
+      !isEditing
+        ? addMovie({ movie })
+        : updateMovie({ movieId: movie.id, movie })
     );
-    this.store$.dispatch(saveMovie({ movie }));
-    this.router.navigate([`/movies/movie-detail/${movie.id}`]);
+    this.store$.dispatch(setViewMode({ viewMode: ViewMode.READ_MOVIE_DETAIL }));
   }
 
   ngOnDestroy(): void {
